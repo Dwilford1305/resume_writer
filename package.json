@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start": "node src/cli.js",
-    "test": "echo \"No tests yet\" && exit 0",
+    "test": "node test-simple.js",
+    "test:integration": "node test.js",
     "install-browsers": "npx playwright install chromium"
   },
   "keywords": [
@@ -26,5 +27,8 @@
     "dotenv": "^17.2.3",
     "pdf-lib": "^1.17.1",
     "playwright": "^1.56.1"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
   }
 }

@@ -23,10 +23,12 @@ cd resume_writer
 npm install
 ```
 
-3. Install Playwright browsers:
+3. Install Playwright browsers (required for web scraping):
 ```bash
 npm run install-browsers
 ```
+
+**Note:** If the browser installation fails, you can still test the application using mock data (see Testing section below).
 
 ## Usage
 
@@ -150,6 +152,26 @@ To contribute or modify the application:
 3. Make your changes
 4. Test thoroughly
 5. Submit a pull request
+
+## Testing
+
+The project includes two types of tests:
+
+### Simple Test (No Browser Required)
+Run basic tests using mock data:
+```bash
+npm test
+```
+
+This test validates the core resume generation logic without requiring browser installation.
+
+### Integration Test (Requires Browsers)
+Run full integration tests with real web scraping:
+```bash
+npm run test:integration
+```
+
+**Note:** Integration tests require Playwright browsers to be installed first.
 
 ## Troubleshooting
 

@@ -1,0 +1,57 @@
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "phone": "+1-234-567-8900",
+  "location": "San Francisco, CA",
+  "summary": "Experienced software engineer with 5+ years of expertise in full-stack development, specializing in JavaScript, React, and Node.js. Passionate about creating scalable applications and solving complex problems.",
+  "experience": [
+    {
+      "title": "Senior Software Engineer",
+      "company": "Tech Company Inc.",
+      "location": "San Francisco, CA",
+      "startDate": "2021-01",
+      "endDate": "Present",
+      "responsibilities": [
+        "Lead development of customer-facing web applications using React and Node.js",
+        "Mentor junior developers and conduct code reviews",
+        "Implemented CI/CD pipelines reducing deployment time by 40%",
+        "Collaborated with product managers to define technical requirements"
+      ]
+    },
+    {
+      "title": "Software Engineer",
+      "company": "StartUp XYZ",
+      "location": "Remote",
+      "startDate": "2019-03",
+      "endDate": "2020-12",
+      "responsibilities": [
+        "Developed RESTful APIs using Node.js and Express",
+        "Built responsive frontends with React and TypeScript",
+        "Worked with PostgreSQL and MongoDB databases",
+        "Participated in agile development processes"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Science in Computer Science",
+      "school": "University of California",
+      "location": "Berkeley, CA",
+      "graduationDate": "2018"
+    }
+  ],
+  "skills": [
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Node.js",
+    "Express",
+    "Python",
+    "SQL",
+    "MongoDB",
+    "Git",
+    "Docker",
+    "AWS",
+    "Agile/Scrum"
+  ]
+}

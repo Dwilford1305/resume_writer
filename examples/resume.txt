@@ -1,0 +1,36 @@
+JOHN DOE
+john.doe@example.com | +1-234-567-8900 | San Francisco, CA
+
+PROFESSIONAL SUMMARY
+Experienced software engineer with 5+ years of expertise in full-stack development, 
+specializing in JavaScript, React, and Node.js. Passionate about creating scalable 
+applications and solving complex problems.
+
+PROFESSIONAL EXPERIENCE
+
+Senior Software Engineer | Tech Company Inc. | San Francisco, CA
+January 2021 - Present
+• Lead development of customer-facing web applications using React and Node.js
+• Mentor junior developers and conduct code reviews
+• Implemented CI/CD pipelines reducing deployment time by 40%
+• Collaborated with product managers to define technical requirements
+
+Software Engineer | StartUp XYZ | Remote
+March 2019 - December 2020
+• Developed RESTful APIs using Node.js and Express
+• Built responsive frontends with React and TypeScript
+• Worked with PostgreSQL and MongoDB databases
+• Participated in agile development processes
+
+EDUCATION
+
+Bachelor of Science in Computer Science
+University of California, Berkeley, CA
+Graduated: 2018
+
+TECHNICAL SKILLS
+
+Languages & Frameworks: JavaScript, TypeScript, React, Node.js, Express, Python
+Databases: SQL, MongoDB, PostgreSQL
+Tools & Platforms: Git, Docker, AWS, CI/CD
+Methodologies: Agile, Scrum

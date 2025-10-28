@@ -264,9 +264,9 @@ export class ResumeWriter {
     const sections = [];
     
     // Header
-    sections.push('=' .repeat(60));
+    sections.push('='.repeat(60));
     sections.push('TARGETED RESUME');
-    sections.push('=' .repeat(60));
+    sections.push('='.repeat(60));
     sections.push('');
     
     // Job Information

@@ -43,9 +43,9 @@ async function runSimpleTest() {
     // Create resume content (simplified version of the main logic)
     const sections = [];
     
-    sections.push('=' .repeat(60));
+    sections.push('='.repeat(60));
     sections.push('TARGETED RESUME');
-    sections.push('=' .repeat(60));
+    sections.push('='.repeat(60));
     sections.push('');
     
     sections.push('TARGET POSITION');

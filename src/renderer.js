@@ -16,10 +16,44 @@ const welcomePanel = document.getElementById('welcomePanel');
 const progressMessages = document.getElementById('progressMessages');
 const resultContent = document.getElementById('resultContent');
 
+// Modal Elements
+const customModal = document.getElementById('customModal');
+const modalTitle = document.getElementById('modalTitle');
+const modalMessage = document.getElementById('modalMessage');
+const modalOkBtn = document.getElementById('modalOkBtn');
+
 // Set default output path
 outputPathInput.value = './output/resume.txt';
 
+// Modal Functions
+function showModal(title, message) {
+  modalTitle.textContent = title;
+  modalMessage.textContent = message;
+  customModal.classList.add('show');
+}
+
+function hideModal() {
+  customModal.classList.remove('show');
+}
+
 // Event Listeners
+
+// Modal OK button
+modalOkBtn.addEventListener('click', hideModal);
+
+// Close modal on background click
+customModal.addEventListener('click', (e) => {
+  if (e.target === customModal) {
+    hideModal();
+  }
+});
+
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && customModal.classList.contains('show')) {
+    hideModal();
+  }
+});
 
 selectResumeBtn.addEventListener('click', async () => {
   const filePath = await window.electronAPI.selectResumeFile();
@@ -119,7 +153,7 @@ function showResult(success, data) {
 async function generateResume() {
   // Validate required fields
   if (!jobUrlInput.value.trim()) {
-    alert('Please enter a job posting URL');
+    showModal('Validation Error', 'Please enter a job posting URL');
     jobUrlInput.focus();
     return;
   }
@@ -128,7 +162,7 @@ async function generateResume() {
   try {
     new URL(jobUrlInput.value.trim());
   } catch (e) {
-    alert('Please enter a valid URL');
+    showModal('Validation Error', 'Please enter a valid URL');
     jobUrlInput.focus();
     return;
   }

@@ -17,8 +17,7 @@ function createWindow() {
       nodeIntegration: false,
       contextIsolation: true,
       preload: join(__dirname, 'preload.js')
-    },
-    icon: null
+    }
   });
 
   mainWindow.loadFile(join(__dirname, 'index.html'));

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'">
+  <title>Resume Writer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎯 Resume Writer</h1>
+      <p class="subtitle">Create targeted resumes based on job postings</p>
+    </header>
+
+    <main>
+      <div class="form-section">
+        <h2>Input Configuration</h2>
+        
+        <div class="form-group">
+          <label for="jobUrl" class="required">Job Posting URL:</label>
+          <input 
+            type="url" 
+            id="jobUrl" 
+            placeholder="https://example.com/job-posting" 
+            required
+          />
+          <small>URL of the job posting you're applying to</small>
+        </div>
+
+        <div class="form-group">
+          <label for="resumePath">Current Resume:</label>
+          <div class="file-input-group">
+            <input 
+              type="text" 
+              id="resumePath" 
+              placeholder="No file selected" 
+              readonly
+            />
+            <button type="button" id="selectResumeBtn" class="btn-secondary">Browse...</button>
+          </div>
+          <small>Your existing resume (JSON or text format)</small>
+        </div>
+
+        <div class="form-group">
+          <label for="websites">Personal Websites:</label>
+          <textarea 
+            id="websites" 
+            rows="3" 
+            placeholder="https://myportfolio.com&#10;https://myblog.com"
+          ></textarea>
+          <small>One URL per line</small>
+        </div>
+
+        <div class="form-group">
+          <label for="socialProfiles">Social Profiles:</label>
+          <textarea 
+            id="socialProfiles" 
+            rows="3" 
+            placeholder="https://linkedin.com/in/yourprofile&#10;https://github.com/yourusername"
+          ></textarea>
+          <small>LinkedIn, GitHub, etc. (one URL per line)</small>
+        </div>
+
+        <div class="form-group">
+          <label for="outputPath">Output File:</label>
+          <div class="file-input-group">
+            <input 
+              type="text" 
+              id="outputPath" 
+              placeholder="./output/resume.txt" 
+              readonly
+            />
+            <button type="button" id="selectOutputBtn" class="btn-secondary">Browse...</button>
+          </div>
+          <small>Where to save the generated resume</small>
+        </div>
+
+        <div class="button-group">
+          <button type="button" id="generateBtn" class="btn-primary">
+            Generate Resume
+          </button>
+          <button type="button" id="clearBtn" class="btn-secondary">
+            Clear Form
+          </button>
+        </div>
+      </div>
+
+      <div class="output-section">
+        <h2>Status & Output</h2>
+        
+        <div id="progressPanel" class="panel" style="display: none;">
+          <div class="progress-header">
+            <h3>Generation Progress</h3>
+            <div class="spinner"></div>
+          </div>
+          <div id="progressMessages" class="progress-messages"></div>
+        </div>
+
+        <div id="resultPanel" class="panel" style="display: none;">
+          <div id="resultContent"></div>
+        </div>
+
+        <div id="welcomePanel" class="panel">
+          <h3>Welcome to Resume Writer!</h3>
+          <p>This application helps you create targeted resumes based on job postings.</p>
+          
+          <h4>How it works:</h4>
+          <ol>
+            <li>Enter the URL of a job posting you're interested in</li>
+            <li>Optionally upload your current resume</li>
+            <li>Add your personal websites and social profiles (optional)</li>
+            <li>Click "Generate Resume" to create a tailored resume</li>
+          </ol>
+
+          <h4>Features:</h4>
+          <ul>
+            <li>🎯 Analyzes job requirements automatically</li>
+            <li>🌐 Scrapes job postings, websites, and profiles</li>
+            <li>📄 Supports JSON and text resume formats</li>
+            <li>🔍 Matches your skills to job requirements</li>
+            <li>📊 Generates comprehensive targeted resumes</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Resume Writer v1.0.0 | Created with ❤️ for job seekers</p>
+    </footer>
+  </div>
+
+  <!-- Custom Modal -->
+  <div id="customModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-icon">⚠️</span>
+        <h3 id="modalTitle">Validation Error</h3>
+      </div>
+      <div class="modal-body">
+        <p id="modalMessage"></p>
+      </div>
+      <div class="modal-footer">
+        <button id="modalOkBtn" class="btn-primary">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

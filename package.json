@@ -2,13 +2,14 @@
   "name": "resume_writer",
   "version": "1.0.0",
   "description": "Resume writing app that creates targeted resumes based on job postings",
-  "main": "index.js",
+  "main": "src/main.js",
   "type": "module",
   "bin": {
     "resume-writer": "./src/cli.js"
   },
   "scripts": {
-    "start": "node src/cli.js",
+    "start": "electron .",
+    "start:cli": "node src/cli.js",
     "test": "node test-simple.js",
     "test:integration": "node test.js",
     "install-browsers": "npx playwright install chromium"
@@ -25,6 +26,7 @@
   "dependencies": {
     "commander": "^14.0.2",
     "dotenv": "^17.2.3",
+    "electron": "^39.0.0",
     "pdf-lib": "^1.17.1",
     "playwright": "^1.56.1"
   },

@@ -2,36 +2,63 @@
 
 This guide provides detailed instructions on how to use the Resume Writer application.
 
-## Quick Start
+## Choosing Your Interface
 
-### 1. Basic Usage (No Additional Data)
+Resume Writer offers two interfaces:
+
+### 🖥️ Graphical User Interface (GUI)
+- **Recommended for most users**
+- Easy-to-use visual interface
+- Real-time progress updates
+- File browsing dialogs
+- No command line knowledge needed
+
+Launch with: `npm start`
+
+**For detailed GUI instructions, see [GUI_GUIDE.md](GUI_GUIDE.md)**
+
+### 💻 Command Line Interface (CLI)
+- For advanced users
+- Scriptable and automatable
+- Faster for repetitive tasks
+- Better for remote/headless environments
+
+Launch with: `npm run start:cli generate [options]`
+
+**The rest of this guide covers CLI usage.**
+
+---
+
+## CLI Quick Start
+
+### 1. Basic CLI Usage (No Additional Data)
 
 Generate a resume using only your existing resume and a job posting URL:
 
 ```bash
-npm start generate \
+npm run start:cli generate \
   --job-url "https://example.com/careers/position" \
   --resume ./examples/resume.txt
 ```
 
-### 2. Advanced Usage (With Online Presence)
+### 2. Advanced CLI Usage (With Online Presence)
 
 Include your websites and social profiles for a more comprehensive resume:
 
 ```bash
-npm start generate \
+npm run start:cli generate \
   --job-url "https://example.com/careers/position" \
   --resume ./examples/resume.json \
   --websites "https://myportfolio.com" \
   --social "https://linkedin.com/in/yourname" "https://github.com/yourname"
 ```
 
-## Command Reference
+## CLI Command Reference
 
 ### Generate Command
 
 ```
-npm start generate [options]
+npm run start:cli generate [options]
 ```
 
 #### Required Options
@@ -114,12 +141,12 @@ Skill 1, Skill 2, Skill 3
 
 See `examples/resume.txt` for an example.
 
-## Real-World Examples
+## Real-World CLI Examples
 
 ### Example 1: Software Developer Position
 
 ```bash
-npm start generate \
+npm run start:cli generate \
   --job-url "https://jobs.techcompany.com/senior-developer" \
   --resume ./my-resume.json \
   --websites "https://myportfolio.dev" \
@@ -130,7 +157,7 @@ npm start generate \
 ### Example 2: Product Manager Role
 
 ```bash
-npm start generate \
+npm run start:cli generate \
   --job-url "https://careers.startup.io/product-manager" \
   --resume ./my-resume.txt \
   --websites "https://myblog.com" "https://myprojects.com" \
@@ -141,7 +168,7 @@ npm start generate \
 ### Example 3: Minimal (Job URL Only)
 
 ```bash
-npm start generate \
+npm run start:cli generate \
   --job-url "https://company.com/jobs/position-123"
 ```
 
@@ -174,23 +201,25 @@ Make sure your input resume file is up-to-date with your latest experience and s
 
 The generated resume is a starting point. Always review and customize it further to ensure accuracy and impact.
 
-### 5. Use for Multiple Applications
+### 5. Use for Multiple Applications (CLI)
 
 Generate different targeted resumes for different positions:
 
 ```bash
 # For Company A
-npm start generate \
+npm run start:cli generate \
   --job-url "https://companyA.com/job" \
   --resume ./resume.json \
   --output ./output/companyA-resume.txt
 
 # For Company B
-npm start generate \
+npm run start:cli generate \
   --job-url "https://companyB.com/job" \
   --resume ./resume.json \
   --output ./output/companyB-resume.txt
 ```
+
+**GUI Tip:** The GUI makes this even easier - just change the job URL and output path, then click Generate again!
 
 ## Troubleshooting
 
@@ -242,10 +271,21 @@ The application generates plain text output. To convert to other formats:
 
 If you encounter issues:
 
-1. Check this usage guide
-2. Review the main [README.md](README.md)
-3. Run tests to verify installation: `npm test`
-4. Open an issue on GitHub with details about your problem
+1. **GUI Users:** Check the [GUI_GUIDE.md](GUI_GUIDE.md) for GUI-specific help
+2. **CLI Users:** Check this usage guide for command-line help
+3. Review the main [README.md](README.md)
+4. Run tests to verify installation: `npm test`
+5. Open an issue on GitHub with details about your problem
+
+## Switching Between GUI and CLI
+
+You can use both interfaces interchangeably:
+
+- **GUI to CLI:** Same features, just different interface
+- **CLI to GUI:** Run `npm start` instead of `npm run start:cli`
+- **Files are compatible:** Resumes and output work the same way
+
+Choose the interface that best fits your workflow!
 
 ## Contributing
 

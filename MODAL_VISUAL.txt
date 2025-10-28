@@ -1,0 +1,68 @@
+╔══════════════════════════════════════════════════════════════╗
+║                                                              ║
+║                    🎯 Resume Writer                          ║
+║         Create targeted resumes based on job postings        ║
+║                                                              ║
+╠══════════════════════════════════════════════════════════════╣
+║                                                              ║
+║  Input Configuration          │  Status & Output            ║
+║  ────────────────────         │  ──────────────             ║
+║                                │                             ║
+║  Job Posting URL: *            │  ╔════════════════════╗   ║
+║  ┌──────────────────────────┐  │  ║                    ║   ║
+║  │ https://example.com/job  │  │  ║  ⚠️  Validation Error   ║
+║  └──────────────────────────┘  │  ║                    ║   ║
+║                                │  ║ ──────────────────  ║   ║
+║  Current Resume:               │  ║                    ║   ║
+║  ┌────────────────────┐        │  ║  Please enter a    ║   ║
+║  │ No file selected   │ Browse │  ║  valid URL         ║   ║
+║  └────────────────────┘        │  ║                    ║   ║
+║                                │  ║ ──────────────────  ║   ║
+║  Personal Websites:            │  ║                    ║   ║
+║  ┌──────────────────────────┐  │  ║         [  OK  ]   ║   ║
+║  │                          │  │  ║                    ║   ║
+║  └──────────────────────────┘  │  ╚════════════════════╝   ║
+║                                │                             ║
+║  [Generate Resume] [Clear]     │                             ║
+║                                │                             ║
+╚══════════════════════════════════════════════════════════════╝
+
+CUSTOM MODAL FEATURES:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Professional Design
+   - White modal box with rounded corners
+   - Purple gradient "OK" button matching app theme
+   - Semi-transparent dark overlay with blur effect
+   
+✅ Smooth Animations
+   - Fade-in background overlay (0.2s)
+   - Slide-in modal from top (0.3s)
+   - Smooth transitions
+   
+✅ Multiple Close Methods
+   - Click the "OK" button
+   - Click outside the modal (on the overlay)
+   - Press the Escape key
+   
+✅ Better UX
+   - Non-blocking (doesn't freeze the app)
+   - Visually appealing and consistent with app design
+   - Focus returns to input field after closing
+   - Keyboard accessible
+
+VALIDATION ERRORS SHOWN:
+────────────────────────
+1. "Please enter a job posting URL" - When field is empty
+2. "Please enter a valid URL" - When URL format is invalid
+
+This replaces the old system alert() which looked like:
+╔═══════════════════════════╗
+║ Resume Writer            ⓧ║
+╠═══════════════════════════╣
+║ Please enter a job        ║
+║ posting URL               ║
+║                           ║
+║              [  OK  ]     ║
+╚═══════════════════════════╝
+(Plain system dialog - inconsistent with app design)

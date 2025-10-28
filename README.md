@@ -1,14 +1,16 @@
 # Resume Writer
 
-An intelligent resume writing application that creates targeted resumes based on job postings. The app uses Playwright to scrape job posting details, your online presence, and combines them with your existing resume to generate a tailored resume for each position.
+An intelligent resume writing application that creates targeted resumes based on job postings. The app features both a **modern graphical user interface (GUI)** and a **command-line interface (CLI)**, using Playwright to scrape job posting details, your online presence, and combines them with your existing resume to generate a tailored resume for each position.
 
 ## Features
 
+- 🖥️ **Dual Interface**: Beautiful GUI built with Electron and full-featured CLI
 - 🎯 **Targeted Resume Generation**: Analyzes job postings to create resumes that match specific requirements
 - 🌐 **Web Scraping**: Uses Playwright to gather data from job postings, personal websites, and social profiles
 - 📄 **Multiple Input Formats**: Supports both JSON and plain text resume formats
 - 🔍 **Skill Matching**: Automatically identifies and highlights relevant skills for the position
 - 📊 **Comprehensive Output**: Generates structured resumes with sections tailored to job requirements
+- 👥 **User-Friendly**: GUI makes it accessible for non-technical users
 
 ## Installation
 
@@ -32,20 +34,43 @@ npm run install-browsers
 
 ## Usage
 
-### Basic Usage
+The Resume Writer offers two ways to use the application:
+
+### 🖥️ GUI Application (Recommended)
+
+Launch the graphical user interface for the easiest experience:
+
+```bash
+npm start
+```
+
+This opens a window where you can:
+1. Enter the job posting URL
+2. Browse and select your resume file
+3. Add your personal websites and social profiles
+4. Choose where to save the output
+5. Click "Generate Resume" and watch the progress in real-time
+
+The GUI is perfect for users who prefer a visual interface and want to see the generation progress.
+
+### 💻 Command Line Interface (CLI)
+
+For advanced users and automation, use the CLI:
+
+#### Basic CLI Usage
 
 Generate a resume for a specific job posting:
 
 ```bash
-npm start generate --job-url "https://example.com/job-posting" --resume ./examples/resume.txt
+npm run start:cli generate --job-url "https://example.com/job-posting" --resume ./examples/resume.txt
 ```
 
-### Advanced Usage
+#### Advanced CLI Usage
 
 Include your websites and social profiles for more comprehensive data:
 
 ```bash
-npm start generate \
+npm run start:cli generate \
   --job-url "https://example.com/job-posting" \
   --resume ./examples/resume.json \
   --websites "https://myportfolio.com" "https://myblog.com" \
@@ -53,7 +78,7 @@ npm start generate \
   --output ./output/my-targeted-resume.txt
 ```
 
-### Command Line Options
+### Command Line Options (CLI)
 
 - `-j, --job-url <url>` (required): URL of the job posting you're applying to
 - `-r, --resume <path>`: Path to your current resume (JSON or text format)
@@ -63,22 +88,33 @@ npm start generate \
 
 ### Examples
 
+#### GUI Examples
+
+Simply run `npm start` and fill in the form with:
+- Job URL: `https://jobs.example.com/position`
+- Resume: Browse to select `./examples/resume.json`
+- Websites: Add any portfolio URLs (one per line)
+- Social Profiles: Add LinkedIn, GitHub URLs (one per line)
+- Click "Generate Resume"
+
+#### CLI Examples
+
 Using the example resume files:
 
 ```bash
 # Using JSON resume
-npm start generate \
+npm run start:cli generate \
   --job-url "https://jobs.example.com/position" \
   --resume ./examples/resume.json
 
 # Using text resume with websites
-npm start generate \
+npm run start:cli generate \
   --job-url "https://jobs.example.com/position" \
   --resume ./examples/resume.txt \
   --websites "https://mysite.com"
 
 # Complete example with all options
-npm start generate \
+npm run start:cli generate \
   --job-url "https://jobs.example.com/senior-developer" \
   --resume ./examples/resume.json \
   --websites "https://portfolio.example.com" \
